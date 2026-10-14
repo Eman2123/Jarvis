@@ -120,7 +120,9 @@ from engine.login import (
     update_password
 )
 
-eel.init("www")
+from engine.paths import resource_path, init_db
+
+eel.init(resource_path("www"))
 
 
 @eel.expose
@@ -271,6 +273,7 @@ def open_browser():
 #)
 
 def start():
+    init_db()
     create_user_table()
     update_users_table()
 
