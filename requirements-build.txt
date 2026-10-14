@@ -1,0 +1,25 @@
+# Minimal dependencies actually imported by Jarvis, for building the .exe.
+# Use Python 3.10 (64-bit) on Windows: Eel 0.14 / gevent 21.12 / PyAudio 0.2.13
+# in the original requirments.txt do not support newer Python versions.
+Eel==0.14.0
+bottle==0.12.21
+bottle-websocket==0.2.9
+gevent==21.12.0
+gevent-websocket==0.10.1
+beautifulsoup4==4.11.1
+markdown2==2.5.3
+groq
+playsound==1.2.2
+pycaw
+comtypes==1.1.11
+psutil==5.9.1
+pvporcupine==1.9.5
+PyAudio==0.2.13
+PyAutoGUI==0.9.53
+pyttsx3==2.90
+pywhatkit==5.3
+pywin32==304
+screen-brightness-control
+SpeechRecognition==3.8.1
+requests==2.27.1
+pyinstaller>=5.13,<7

@@ -1,6 +1,8 @@
 import sqlite3
 
-DB_NAME = "jarvis.db"
+from engine.paths import DB_PATH
+
+DB_NAME = DB_PATH
 
 
 def create_user_table():

@@ -4,12 +4,7 @@ import os
 from datetime import datetime
 
 # Jarvis project ka main folder
-BASE_DIR = os.path.dirname(
-    os.path.dirname(os.path.abspath(__file__))
-)
-
-# Database file ka path
-DB_PATH = os.path.join(BASE_DIR, "jarvis.db")
+from engine.paths import DB_PATH
 
 
 def get_connection():

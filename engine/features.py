@@ -17,6 +17,7 @@ import pyaudio
 import pyautogui
 from engine.command import speak
 from engine.config import ASSISTANT_NAME, LLM_KEY
+from engine.paths import DB_PATH, init_db, resource_path
 
 # playing assistant sound function
 import  pywhatkit as kit
@@ -25,13 +26,14 @@ import pvporcupine
 from engine.helper import extract_yt_term, markdown_to_text, remove_words
 
 
-conn = sqlite3.connect("jarvis.db")
+init_db()
+conn = sqlite3.connect(DB_PATH)
 cursor = conn.cursor()
 
 
 @eel.expose
 def playAssistantSound():
-    music_dir="www\\assets\\audio\\www_assets_audio_start_sound.mp3"
+    music_dir=resource_path("www", "assets", "audio", "www_assets_audio_start_sound.mp3")
     playsound(music_dir)
 
 def openCommand(query):
