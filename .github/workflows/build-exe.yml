@@ -19,6 +19,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip wheel "setuptools<70"
           pip install -r requirements-build.txt
+          pip uninstall -y enum34
 
       - name: Build
         shell: pwsh

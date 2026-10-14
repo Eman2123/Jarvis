@@ -15,6 +15,9 @@ python -m pip install --upgrade pip wheel "setuptools<70"
 pip install -r requirements-build.txt
 if errorlevel 1 goto :fail
 
+REM enum34 is an obsolete backport that breaks PyInstaller
+pip uninstall -y enum34
+
 pyinstaller --noconfirm Jarvis.spec
 if errorlevel 1 goto :fail
 
