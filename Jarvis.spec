@@ -8,7 +8,12 @@ datas += collect_data_files("pvporcupine")    # wake-word models/libs
 datas += collect_data_files("pywhatkit")
 
 hiddenimports = []
-hiddenimports += collect_submodules("engine")
+# Explicit list: importing engine.db at build time would run its script code.
+hiddenimports += [
+    "engine.chat_history", "engine.command", "engine.config",
+    "engine.features", "engine.helper", "engine.login",
+    "engine.paths", "engine.reminder", "engine.system_control",
+]
 hiddenimports += collect_submodules("pvporcupine")
 hiddenimports += [
     "bottle_websocket",

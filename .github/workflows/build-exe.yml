@@ -21,7 +21,23 @@ jobs:
           pip install -r requirements-build.txt
 
       - name: Build
-        run: pyinstaller --noconfirm Jarvis.spec
+        shell: bash
+        run: |
+          set +e
+          pyinstaller --noconfirm Jarvis.spec > build.log 2>&1
+          code=$?
+          if [ $code -ne 0 ]; then
+            tail -n 40 build.log | sed 's/%/%25/g' | tr '\n' '|' > tail.txt
+            echo "::error title=PyInstaller failed::$(cat tail.txt)"
+          fi
+          exit $code
+
+      - name: Upload build log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-log
+          path: build.log
 
       - name: Zip
         run: Compress-Archive -Path dist\Jarvis -DestinationPath Jarvis-windows.zip
