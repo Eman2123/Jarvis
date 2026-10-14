@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jarvis Register</title>
+
+<link rel="stylesheet" href="premium_login.css">
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div id="particles"></div>
+
+<div class="animation-bg">
+
+
+<div class="square">
+
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+
+</div>
+
+
+<div class="login-box register-box">
+
+<div class="logo-circle">
+
+<i class="fa-solid fa-microchip"></i>
+
+</div>
+
+<h1>JARVIS AI</h1>
+
+<h3>Create Account</h3>
+
+<p>Create your AI Assistant Account</p>
+
+<!-- First + Last Name -->
+
+<div class="register-row">
+
+<div class="input-box" style="flex:1;">
+<i class="fa-solid fa-user"></i>
+<input type="text" id="firstName" placeholder="First Name">
+</div>
+
+<div class="input-box" style="flex:1;">
+<i class="fa-solid fa-user"></i>
+<input type="text" id="lastName" placeholder="Last Name">
+</div>
+
+</div>
+
+<div class="input-box">
+<i class="fa-regular fa-envelope"></i>
+<input type="email" id="email" placeholder="Email Address">
+</div>
+
+<div class="input-box">
+<i class="fa-solid fa-phone"></i>
+<input type="tel" id="phone" placeholder="Phone Number">
+</div>
+
+<div class="input-box">
+<i class="fa-solid fa-lock"></i>
+<input type="password" id="password" placeholder="Password">
+<i class="fa-regular fa-eye eye"></i>
+</div>
+
+<div class="input-box">
+<i class="fa-solid fa-lock"></i>
+<input type="password" id="confirmPassword" placeholder="Confirm Password">
+<i class="fa-regular fa-eye eye"></i>
+</div>
+
+
+<button id="registerBtn">
+
+Create Account
+
+<i class="fa-solid fa-user-plus"></i>
+
+</button>
+
+<div class="bottom">
+
+Already have an account?
+
+<a href="login.html">
+
+Login
+
+</a>
+
+</div>
+
+</div>
+
+<script src="/eel.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+
+const particles=document.getElementById("particles");
+
+for(let i=0;i<45;i++){
+
+const span=document.createElement("span");
+
+span.style.left=Math.random()*100+"%";
+
+span.style.animationDelay=Math.random()*15+"s";
+
+span.style.animationDuration=(8+Math.random()*12)+"s";
+
+particles.appendChild(span);
+
+}
+
+</script>
+
+<script src="register.js"></script>
+
+</body>
+
+</html>

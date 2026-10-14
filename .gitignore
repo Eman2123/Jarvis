@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+env/
+venv/
+.venv/
+envjarvis/
+
+# Local secrets and authentication data
+.env
+.env.*
+!.env.example
+engine/cookies.json
+
+# Local databases and personal data
+*.db
+*.sqlite
+*.sqlite3
+contacts.csv
+
+# Logs and operating-system files
+*.log
+.DS_Store
+Thumbs.db
